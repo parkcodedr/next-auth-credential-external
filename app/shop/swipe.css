@@ -1,0 +1,41 @@
+:root {
+  --swiper-theme-color: #fc53ec;
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.swiper {
+  margin-left: auto;
+  margin-right: auto;
+}
+.swiper-pagination-bullet{
+    border:1px solid#fc53ec;
+    background: transparent;
+    width: 12px;
+    height: 12px;
+    opacity: 1;
+    
+}
+.swiper-pagination-bullet.swiper-pagination-bullet-active{
+    background: #fc53ec;;
+}

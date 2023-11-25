@@ -10,9 +10,10 @@ export const options = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       profile(profile) {
         return {
-          // Return all the profile information you need.
-          // The only truly required field is `id`
-          // to be able identify the account when added to a database
+          ...profile,
+          role: profile.role ?? "user",
+          id: profile.id.toString(),
+          image: profile.avatar_url,
         };
       },
     }),
@@ -50,24 +51,27 @@ export const options = {
           const response = await instance.post("/login", credentials);
           const { userInfo, token } = response.data;
 
-          if (userInfo && token) {
-            // Registration successful, return user information and access token
+          const user = { ...userInfo };
+          if (user && token) {
+            user.accessToken = token.access_token;
             return {
-              ...userInfo,
-              accessToken: token.access_token, // Adjust this based on your token structure
+              ...user,
+              role: user?.usertype,
+              businessname: user?.businessname,
+              accessToken: user.accessToken,
+              customerID: user?.customerID,
+              image: user.profile_pic,
+              store_logo: user.store_logo,
+              email_verified: user?.email_verified,
+              isPremium: user?.merchantSubStatus,
             };
           } else {
-            // If the user does not exist, it's an authentication attempt
-            // Handle authentication logic (e.g., validate credentials against existing users)
-            // ...
-
             // If authentication is successful, return user information (without access token)
             // ...
             throw new Error("Invalid credentials");
           }
         } catch (error) {
           throw new Error(error.response?.data?.ResponseMessage);
-        
         }
       },
     }),
@@ -76,7 +80,34 @@ export const options = {
   pages: {
     signIn: "/signin",
   },
-  session: {
-    strategy: "jwt",
+  callbacks: {
+    async jwt({ token, user }) {
+      if (user) token.role = user.role;
+      return token;
+    },
+    // If you want to use the role in client components
+    async session({ session, token }) {
+      if (session?.user) session.user.role = token.role;
+      return session;
+    },
+    // async signIn(userInfo, account, profile) {
+    //   console.log({ userInfo, account, profile});
+    //   // Check if it's a new user and send registration data to external API
+    //   if (userInfo?.account?.provider === "google" && userInfo?.user?.id) {
+    //     console.log("new");
+    //     try {
+    //       const response = await instance.post("/register", {
+    //         email: userInfo?.user?.email,
+    //         name: userInfo?.user?.name,
+    //       });
+    //       console.log({ response });
+    //     } catch (error) {
+    //       console.log({ error: error?.response?.data });
+    //       console.error("Error sending registration data:", error.message);
+    //     }
+    //   }
+
+    //   return true; // Continue with sign-in
+    // },
   },
 };

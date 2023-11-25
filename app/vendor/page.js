@@ -1,17 +1,31 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import React from "react";
-import { signOut } from "next-auth/react";
-import { getSession } from "@/lib/getCurrentUser";
+import { signOut, useSession } from "next-auth/react";
+import Image from "next/image";
 
-const VendorDashboard = async () => {
-  const session = await getSession();
+const VendorDashboard = () => {
+  const { data: session } = useSession();
 
-  console.log({ session });
   return (
     <div>
       <h1>Vendor Dashboard</h1>
-      <Button onClick={() => signOut()}>Sign out</Button>
+
+      {session ? (
+        <>
+          <h4>{session.user.name}</h4>
+          <h2>{JSON.stringify(session.user)}</h2>
+          <Image
+            src={session.user?.image}
+            height={30}
+            width={30}
+            alt="user"
+            className="rounded-full object-cover"
+            
+          />
+          <Button onClick={() => signOut()}>Sign out</Button>
+        </>
+      ) : null}
     </div>
   );
 };

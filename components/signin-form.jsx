@@ -3,6 +3,9 @@ import React, { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
+import { AiFillGithub } from "react-icons/ai";
+import { FaFacebookF } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 import {
   Form,
   FormControl,
@@ -15,6 +18,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { signIn } from "next-auth/react";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
+import { Separator } from "@/components/ui/separator";
 
 const SignInForm = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -98,7 +102,23 @@ const SignInForm = () => {
             Login
           </Button>
         </form>
+        <p className="text-center mt-1">Or</p>
       </Form>
+
+      <div className="flex flex-col space-y-4 mt-4">
+        <Button onClick={() => signIn("google")} variant="outline">
+          <FcGoogle />
+          <span className="ml-2">Continue with Google</span>
+        </Button>
+        <Button onClick={() => signIn("facebook")} variant="outline">
+          <FaFacebookF />
+          <span className="ml-2">Continue with Facebook</span>
+        </Button>
+        <Button onClick={() => signIn("github")} variant="outline">
+          <AiFillGithub />
+          <span className="ml-2">Continue with Github</span>
+        </Button>
+      </div>
     </div>
   );
 };
