@@ -5,6 +5,7 @@ import Navbar from "@/components/store/Navbar";
 import CategoryMenu from "@/components/store/CategoryMenu";
 import HeroSlider from "@/components/store/HeroSlider";
 import Deals from "@/components/store/Deals";
+import BestPrices from "@/components/store/BestPrices";
 
 const page = () => {
   return (
@@ -15,11 +16,12 @@ const page = () => {
       </section>
       <section className="flex 2xl:container">
         <CategoryMenu />
-        <div className="w-4/5 ">
+        <div className="w-full md:w-4/5 ">
           <HeroSlider />
         </div>
       </section>
       <Deals />
+      <BestPrices />
     </main>
   );
 };

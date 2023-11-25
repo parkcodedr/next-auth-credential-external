@@ -1,11 +1,11 @@
 import React from "react";
 import ProductCard from "@/components/store/cards/ProductCard";
 
-const Deals = () => {
+const BestPrices = () => {
   return (
-    <section className="bg-[#FFF4FE] pb-10">
+    <section className="bg-[#EEDEED] pb-10">
       <main className="container mx-auto px-20 py-5">
-        <h2 className="py-5 text-xl font-bold">Latest deals</h2>
+        <h2 className="py-5 text-xl font-bold">Best Prices</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-14">
           {products.map((product) => (
             <ProductCard product={product} />
@@ -16,7 +16,7 @@ const Deals = () => {
   );
 };
 
-export default Deals;
+export default BestPrices;
 
 const products = [
   {

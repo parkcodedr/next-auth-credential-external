@@ -20,7 +20,7 @@ import { Button } from "../ui/button";
 const Navbar = () => {
   return (
     <main className="navbar__wrapper">
-      <div className="max-h-20  py-5 flex gap-16 items-center container mx-auto">
+      <div className="max-h-20  py-5 flex flex-wrap gap-16 items-center container mx-auto px-10">
         <Image src="/assets/images/logo.png" width={100} height={50} />
         <ul className="flex items-center gap-4">
           {menuLeft.map((menu, index) => (
@@ -44,7 +44,7 @@ const Navbar = () => {
                 <MdKeyboardArrowDown size={20} />
               </li>
             </DropdownMenuTrigger>
-            <DropdownMenuContent>
+            <DropdownMenuContent className="px-5">
               <DropdownMenuLabel className="cursor-pointer">
                 <Button className="bg-[#9A47CB]">Sign in</Button>
               </DropdownMenuLabel>

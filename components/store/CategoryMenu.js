@@ -14,7 +14,7 @@ import Link from "next/link";
 
 const CategoryMenu = () => {
   return (
-    <div className="w-[212px] bg-[#EABC6F14] ">
+    <div className="w-[212px] bg-[#EABC6F14] hidden md:block">
       <h3 className="text-[10px] p-5">Select any categories below</h3>
       <section className="space-y-1 mt-3">
         {cateogries.map((category) => (
