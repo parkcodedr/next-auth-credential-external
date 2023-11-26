@@ -10,6 +10,9 @@ import Electronics from "./Electronics";
 import Health from "./Health";
 import BabyProduct from "./BabyProduct";
 import Gaming from "./Gaming";
+import ReturnIcon from "./ReturnIcon";
+import PickupStation from "./PickupStation";
+import DeliveryIcon from "./DeliveryIcon";
 
 export {
   userIcon,
@@ -24,4 +27,7 @@ export {
   Health,
   BabyProduct,
   Gaming,
+  ReturnIcon,
+  PickupStation,
+  DeliveryIcon,
 };
