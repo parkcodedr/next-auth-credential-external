@@ -9,6 +9,8 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import PolicyItem from "@/components/PolicyItem";
 import { DeliveryIcon, PickupStation, ReturnIcon } from "@/components/vectors";
+import Link from "next/link";
+import SimilarProducts from "@/components/store/SimilatProducts";
 
 const page = () => {
   return (
@@ -107,7 +109,7 @@ const page = () => {
               </Label>
             </div>
           </form>
-          <div>
+          <div className="mt-10">
             <PolicyItem
               icon={<DeliveryIcon />}
               title="Door Delivery"
@@ -124,13 +126,29 @@ const page = () => {
               icon={<ReturnIcon />}
               title="Return Policy"
               description="Free return within 7 days for all eligible items"
-             
             />
           </div>
         </div>
       </section>
+      <section className="container mx-auto mb-20">
+        <div className="mx-10 border border-[#9A0BB4] rounded-md py-2 px-4 flex items-center gap-12 my-7 w-max">
+          {detailNav.map((item) => (
+            <h1 className="text-sm font-medium cursor-pointer">{item}</h1>
+          ))}
+        </div>
+      </section>
+      <SimilarProducts />
     </main>
   );
 };
 
 export default page;
+
+const detailNav = [
+  "Overview",
+  "Description",
+  "Shipping",
+  "Warranty",
+  "Return Policy",
+  "Reviews",
+];

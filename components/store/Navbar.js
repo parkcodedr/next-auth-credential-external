@@ -96,6 +96,6 @@ const menuRight = [
   {
     title: "Cart",
     link: "cart",
-    icon: <ShoppingCart />,
+    icon: <ShoppingCart strokeWidth={1.5} />,
   },
 ];
