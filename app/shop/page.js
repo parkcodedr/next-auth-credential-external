@@ -6,6 +6,8 @@ import CategoryMenu from "@/components/store/CategoryMenu";
 import HeroSlider from "@/components/store/HeroSlider";
 import Deals from "@/components/store/Deals";
 import BestPrices from "@/components/store/BestPrices";
+import SummaryCount from "@/components/store/SummaryCount";
+import Footer from "@/components/store/Footer";
 
 const page = () => {
   return (
@@ -22,6 +24,8 @@ const page = () => {
       </section>
       <Deals />
       <BestPrices />
+      <SummaryCount />
+      <Footer />
     </main>
   );
 };

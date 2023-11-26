@@ -117,3 +117,9 @@
   background: #fffefe;
   box-shadow: 0px 17px 16.8px 0px rgba(168, 12, 196, 0.05);
 }
+.counter__summary {
+  background-image: url("/assets/images/counter-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}

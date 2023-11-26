@@ -11,6 +11,7 @@ import {
   Phone,
 } from "@/components/vectors";
 import Link from "next/link";
+import Image from "next/image";
 
 const CategoryMenu = () => {
   return (
@@ -44,7 +45,7 @@ const cateogries = [
   },
   {
     title: "Food Items",
-    icon: <Phone />,
+    icon: <Image src="/assets/svg/food-items.svg" height={19} width={19} />,
   },
   {
     title: "Computing",
