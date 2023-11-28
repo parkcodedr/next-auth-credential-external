@@ -12,7 +12,7 @@ import Footer from "@/components/store/Footer";
 const page = () => {
   return (
     <main>
-      <div className="h-14 w-full bg-[#fc53ec]"></div>
+      <div className="h-14 w-full bg-[#9A0BB4]"></div>
       <section className="">
         <Navbar />
       </section>

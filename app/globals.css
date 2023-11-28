@@ -123,3 +123,7 @@
   background-position: center;
   background-size: cover;
 }
+.login__container {
+  background: #fff;
+  box-shadow: 1px 6px 21.9px 0px rgba(154, 11, 180, 0.2);
+}
