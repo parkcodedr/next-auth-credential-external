@@ -8,10 +8,10 @@ const page = () => {
     <main>
       <div className="h-14 w-full bg-[#9A0BB4]"></div>
       <Navbar />
-      <section className="2xl:container min-h-screen">
+      <section className="container min-h-screen">
         <section>
           <div className="flex login__container">
-            <div className="w-full md:w-2/5 p-12">
+            <div className="w-full md:w-2/5 p-16">
               <div className="flex flex-col gap-1 mb-5">
                 <h2 className="text-2xl font-semibold">Hi</h2>
                 <p className="text-xs font-light">

@@ -27,12 +27,12 @@ const LoginForm = () => {
       </div>
 
       <Button className="bg-[#9A0BB4] w-full rounded-xl">Sign in</Button>
-      <Link
-        href="/register"
-        className="text-xs text-center mt-2 flex justify-center"
-      >
-        Dont have an account? Sign up
-      </Link>
+      <p className="text-xs text-center mt-2 flex justify-center">
+        Dont have an account?{" "}
+        <Link href="/register" className="text-[#9A0BB4] ml-1">
+          Sign up
+        </Link>
+      </p>
       <div class="flex items-center mt-2">
         <div class="flex-1 border-t border-[rgba(0, 0, 0, 0.28)]"></div>
         <div class="mx-4 text-black text-xs font-normal">Or</div>

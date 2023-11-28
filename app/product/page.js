@@ -9,7 +9,6 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import PolicyItem from "@/components/PolicyItem";
 import { DeliveryIcon, PickupStation, ReturnIcon } from "@/components/vectors";
-import Link from "next/link";
 import SimilarProducts from "@/components/store/SimilatProducts";
 
 const page = () => {
